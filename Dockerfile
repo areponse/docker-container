@@ -1,23 +1,19 @@
-# Use a lightweight Node.js image
-FROM node:alpine
+# Use a lightweight HTTP server image
+FROM node:alpine as builder
 
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install HTTP server globally
-RUN npm install -g http-server
-
-# Install dependencies
-RUN npm install
-
 # Copy application code
 COPY . .
 
-# Build the application (if needed)
-# RUN npm run build
+# Use a simple HTTP server
+FROM node:alpine
+WORKDIR /usr/src/app
+COPY --from=builder /usr/src/app .
+
+# Install HTTP server
+RUN npm install -g http-server
 
 # Expose port
 EXPOSE 8080
