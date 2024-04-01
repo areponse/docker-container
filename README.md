@@ -39,6 +39,11 @@ docker run -d -p 8000:8000 reponse11/tasks-todo:v1.0
 - **HTML, CSS, JavaScript**: Frontend development.
 - **Docker**: Containerization platform for easy deployment.
 
+## Links
+
+Slide Deck: [link](https://docs.google.com/presentation/d/1Ome5YOhW0qS11xMRLcUCmcFp5eVQQIXew7a7QCvUb8w/edit?usp=sharing)
+Docker image: [link](https://hub.docker.com/repositories/docker/reponse11/tasks-todo)
+
 ## Contact
 
 If you have any questions or suggestions, feel free to contact the project maintainer:
